@@ -1,0 +1,37 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:14.7-alpine
+    container_name: maslenitsa_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: maslenitsa_bot_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: maslenitsa_bot
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+    environment:
+      MASLENITSA_BOT_CONFIG_NAME: Maslenitsa Helper
+      MASLENITSA_BOT_CONFIG_TOKEN:
+      MASLENITSA_BOT_WEBHOOK_URL:
+      MASLENITSA_BOT_ADMIN_USERNAME:
+      MASLENITSA_BOT_ADMIN_PASSWORD:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/maslenitsa_bot_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+
+volumes:
+  pg_data:

@@ -21,9 +21,22 @@ public enum Recipe implements Descriable, HavingOuterContent {
     WITH_SPINACH_AND_CHEESE("Pancakes_With_Spinach_And_Cheese", "Блины с шпинатом и сыром"),
     WITH_BANANA_AND_CHOCOLATE("Pancakes_With_Banana_And_Chocolate", "Блины с бананом и шоколадом");
 
-    private static final String PATH_TO_DIR = "src/main/resources/static/recipes.pancakes/";
     private static final String FILE_SUFFIX = ".html";
+
+    /**
+     * Переопределяется в {@code application.properties} - зависит от среды запуска.<br>
+     * По умолчанию задан путь для запуска в докере.
+     */
+    private static String pathToDir = "resources/static/recipes.pancakes/";
+
+    /**
+     * Наименование файла с информацией о рецепте.
+     */
     private final String key;
+
+    /**
+     * Пользовательское название рецепта.
+     */
     private final String description;
 
     Recipe(String key, String description) {
@@ -31,10 +44,20 @@ public enum Recipe implements Descriable, HavingOuterContent {
         this.description = description;
     }
 
+    public static void setPathToDir(String pathToDir) {
+        Recipe.pathToDir = pathToDir;
+    }
+
+    /**
+     * @return пользовательское название рецепта.
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * @return наименование файла с информацией о рецепте, без расширения файла.
+     */
     public String getKey() {
         return key;
     }
@@ -45,7 +68,7 @@ public enum Recipe implements Descriable, HavingOuterContent {
 
     @Override
     public String getPathToDirectoryWithFiles() {
-        return PATH_TO_DIR;
+        return pathToDir;
     }
 
     @Override

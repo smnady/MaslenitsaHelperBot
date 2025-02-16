@@ -43,7 +43,7 @@ public class FeedbackService {
                     Stream.of(Station.values()).map(Station::getDescription)
             )).collect(Collectors.toUnmodifiableSet());
 
-    private static final int TIMEOUT = 1;
+    private static final int TIMEOUT = 10;
 
     private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 

@@ -9,8 +9,15 @@ package com.itc.maslenitsabot.common.meta;
  */
 public interface HavingOuterContent {
 
+    /**
+     * @return путь к директории с файлами, содержащими контент.
+     */
     String getPathToDirectoryWithFiles();
 
+    /**
+     * @return расширение файла с точкой.
+     * @Example: {@code .html}
+     */
     String getFileTypeLikeSuffix();
 
 }

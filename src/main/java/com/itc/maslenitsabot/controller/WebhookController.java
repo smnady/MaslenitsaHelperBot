@@ -1,10 +1,12 @@
 package com.itc.maslenitsabot.controller;
 
 import com.itc.maslenitsabot.TelegramBot;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
@@ -15,7 +17,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
  * @author smnadya
  * @since 2025.01.28
  */
-@RestController
+@Controller
 @RequestMapping("/")
 public class WebhookController {
 
@@ -26,8 +28,14 @@ public class WebhookController {
     }
 
     @PostMapping
+    @ResponseBody
     public BotApiMethod<?> onUpdateReceived(@RequestBody Update update) {
         return telegramBot.onWebhookUpdateReceived(update);
+    }
+
+    @GetMapping
+    public String goToAdminPage() {
+        return "redirect:/admin/dashboard";
     }
 
 }

@@ -21,14 +21,18 @@ public enum Station implements Descriable, HavingOuterContent {
     WALKING_ON_STILTS("Walking_On_Stilts", "Ходьба на ходулях"),
     VALENOK_THROWING("Valenok_Throwing", "Метание валенка");
 
-    private static final String PATH_TO_DIR = "src/main/resources/static/stations/";
     private static final String FILE_SUFFIX = ".html";
+    private static String pathToDir = "resources/static/stations/";
     private final String key;
     private final String description;
 
     Station(String key, String description) {
         this.key = key;
         this.description = description;
+    }
+
+    public static void setPathToDir(String pathToDir) {
+        Station.pathToDir = pathToDir;
     }
 
     public String getDescription() {
@@ -46,7 +50,7 @@ public enum Station implements Descriable, HavingOuterContent {
 
     @Override
     public String getPathToDirectoryWithFiles() {
-        return PATH_TO_DIR;
+        return pathToDir;
     }
 
     @Override
