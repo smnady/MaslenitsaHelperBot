@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-4">
+    <h1 class="mb-4" style="text-align: center">Бот Масленичный помощник</h1>
+
+    <div class="mb-3">
+        <h5>Средняя оценка мероприятия: <span th:text="${dto.averageEventRating}"></span></h5>
+    </div>
+
+    <div class="mb-3">
+        <h5>Средняя оценка блинов: <span th:text="${dto.averagePancakesRating}"></span></h5>
+    </div>
+
+
+    <h2>👤 Пользователи - <span th:text="${dto.users.size()}"></span></h2>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Telegram</th>
+            <th>Имя</th>
+            <th>Дата первого использования</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${dto.users}">
+            <td th:text="${'@' + user.username}"></td>
+            <td th:text="${user.firstName + ' ' + user.lastName}"></td>
+            <td th:text="${#temporals.format(user.firstLoginDate, 'dd.MM.yyyy HH:mm')}"></td>
+
+        </tr>
+        </tbody>
+    </table>
+
+    <h2>📝 Отзывы - <span th:text="${dto.feedbacks.size()}"></span></h2>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Telegram</th>
+            <th>Имя</th>
+            <th>Оценка события</th>
+            <th>Оценка блинов</th>
+            <th>Комментарий</th>
+            <th>Дата отзыва</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="feedback : ${dto.feedbacks}">
+            <td th:text="${'@' + feedback.user.username}"></td>
+            <td th:text="${feedback.user.firstName + ' ' + feedback.user.lastName}"></td>
+            <td th:text="${feedback.eventRating}"></td>
+            <td th:text="${feedback.pancakesRating}"></td>
+            <td th:text="${feedback.comment}"></td>
+            <td th:text="${#temporals.format(feedback.createdAt, 'dd.MM.yyyy HH:mm')}"></td>
+
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="/admin/logout" class="btn btn-danger mt-3">Выйти</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

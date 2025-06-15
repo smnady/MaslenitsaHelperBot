@@ -23,11 +23,7 @@ public enum Recipe implements Descriable, HavingOuterContent {
 
     private static final String FILE_SUFFIX = ".html";
 
-    /**
-     * Переопределяется в {@code application.properties} - зависит от среды запуска.<br>
-     * По умолчанию задан путь для запуска в докере.
-     */
-    private static String pathToDir = "resources/static/recipes.pancakes/";
+    private static String pathToDir = "static/recipes.pancakes/";
 
     /**
      * Наименование файла с информацией о рецепте.
@@ -42,10 +38,6 @@ public enum Recipe implements Descriable, HavingOuterContent {
     Recipe(String key, String description) {
         this.key = key;
         this.description = description;
-    }
-
-    public static void setPathToDir(String pathToDir) {
-        Recipe.pathToDir = pathToDir;
     }
 
     /**

@@ -13,7 +13,6 @@ public enum Station implements Descriable, HavingOuterContent {
 
     DANCING_PANS("Dancing_Pans", "Танцующие сковородки"),
     MASLENITSA_PUZZLES("Maslenitsa_Puzzles", "Масленичные пазлы"),
-    FUN_BAGS("Fun_Bags", "Весёлые мешки"),
     BRAIDS("Braids", "Косички"),
     HAPPY_PANCAKES("Happy_Pancakes", "Весёлые блины"),
     TABLECLOTH("Tablecloth", "Скатерть-самобранка"),
@@ -22,17 +21,13 @@ public enum Station implements Descriable, HavingOuterContent {
     VALENOK_THROWING("Valenok_Throwing", "Метание валенка");
 
     private static final String FILE_SUFFIX = ".html";
-    private static String pathToDir = "resources/static/stations/";
+    private static String pathToDir = "static/stations/";
     private final String key;
     private final String description;
 
     Station(String key, String description) {
         this.key = key;
         this.description = description;
-    }
-
-    public static void setPathToDir(String pathToDir) {
-        Station.pathToDir = pathToDir;
     }
 
     public String getDescription() {

@@ -6,9 +6,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.nio.file.Files;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.NoSuchFileException;
-import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -35,8 +35,14 @@ public class ContentLoader {
     }
 
     private static String loadContent(String fileName) {
-        try {
-            return new String(Files.readAllBytes(Paths.get(fileName)));
+        try (InputStream inputStream = ContentLoader.class.getClassLoader().getResourceAsStream(fileName)) {
+            if (inputStream == null) {
+                LOGGER.error(BASE_ERROR_MESSAGE + " Файл не найден: {}", fileName);
+                throw new RuntimeException("Файл не найден: " + fileName);
+            }
+
+            byte[] bytes = inputStream.readAllBytes();
+            return new String(bytes, StandardCharsets.UTF_8);
         } catch (NoSuchFileException e) {
             LOGGER.error(BASE_ERROR_MESSAGE + " Файла не существует: {}", fileName);
             throw new RuntimeException(e);
