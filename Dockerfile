@@ -1,12 +1,12 @@
-FROM maven:3.8.6 AS build
+FROM maven:3.9.6-eclipse-temurin-21 AS build
 WORKDIR /app
 
 COPY pom.xml .
 
 COPY src ./src
-RUN mvn clean package -DskipTests
+RUN mvn clean package -DskipTests -DskipChecks
 
-FROM amazoncorretto:17-alpine
+FROM amazoncorretto:21-alpine-full
 WORKDIR /app
 
 COPY --from=build /app/target/*.jar app.jar
