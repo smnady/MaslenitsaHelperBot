@@ -16,7 +16,8 @@
 сразу понять, как взаимодействовать с ботом.
 
 <details>
-    ![image](https://github.com/user-attachments/assets/5a3292c8-d6d3-4f7e-9b94-b3c11f404fb5)
+
+<img src="https://github.com/user-attachments/assets/5a3292c8-d6d3-4f7e-9b94-b3c11f404fb5" alt="image" width="250"/>
     
 </details>
 
@@ -51,8 +52,9 @@
 Пример запроса: `/recipes`.
 
 <details>
-    ![image](https://github.com/user-attachments/assets/cd6bc1ca-71a5-46cd-8b62-567cb9510606)
-    ![image](https://github.com/user-attachments/assets/08c1da9f-1db7-4a40-a600-fe759c0d8aa8)
+
+<img src="https://github.com/user-attachments/assets/cd6bc1ca-71a5-46cd-8b62-567cb9510606" alt="image" width="250"/>
+<img src="https://github.com/user-attachments/assets/08c1da9f-1db7-4a40-a600-fe759c0d8aa8" alt="image" width="250"/>
 
 </details>
 
@@ -71,8 +73,9 @@
 Игры можно адаптировать под разные мероприятия. Команда: `/stations`.
 
 <details>
-    ![image](https://github.com/user-attachments/assets/e956d4d6-0f14-432d-955b-6b844ed98e22)
-    ![image](https://github.com/user-attachments/assets/6e1c9735-40fe-482f-8d28-6d9fe8b63a32)
+    
+<img src="https://github.com/user-attachments/assets/e956d4d6-0f14-432d-955b-6b844ed98e22" alt="image" width="250"/>
+<img src="https://github.com/user-attachments/assets/6e1c9735-40fe-482f-8d28-6d9fe8b63a32" alt="image" width="250"/>
 
 </details>
 
@@ -88,9 +91,10 @@
 данные опроса не записываются в БД.
 
 <details>
-    ![image](https://github.com/user-attachments/assets/e9b12095-505c-446d-8940-b27f1070eac4)
-    ![image](https://github.com/user-attachments/assets/0c26f1fc-8c8a-49da-bb8f-b3765b4c449d)
-    ![image](https://github.com/user-attachments/assets/6e258ad7-3aeb-4974-8da1-014013070b05)
+
+<img src="https://github.com/user-attachments/assets/e9b12095-505c-446d-8940-b27f1070eac4" alt="image" width="250"/>
+<img src="https://github.com/user-attachments/assets/0c26f1fc-8c8a-49da-bb8f-b3765b4c449d" alt="image" width="250"/>
+<img src="https://github.com/user-attachments/assets/6e258ad7-3aeb-4974-8da1-014013070b05" alt="image" width="250"/>
 
 </details>
 
@@ -114,8 +118,9 @@
 - Выход: `/admin/logout`.
 
 <details>
-    ![image](https://github.com/user-attachments/assets/b5c65673-79cc-487c-ba7a-c802906d3b81)
-    ![image](https://github.com/user-attachments/assets/53155573-3e4b-4807-95c9-8e93ecc25ba2)
+    
+<img src="https://github.com/user-attachments/assets/b5c65673-79cc-487c-ba7a-c802906d3b81" alt="image" width="250"/>
+<img src="https://github.com/user-attachments/assets/53155573-3e4b-4807-95c9-8e93ecc25ba2" alt="image" width="250"/>
 
 </details>
 
