@@ -3,8 +3,6 @@ package com.itc.maslenitsabot.common;
 import com.itc.maslenitsabot.common.meta.Descriable;
 import org.telegram.telegrambots.meta.api.objects.commands.BotCommand;
 
-import java.util.stream.Stream;
-
 import static com.itc.maslenitsabot.common.Command.Message.CHOOSE_RECIPE;
 import static com.itc.maslenitsabot.common.Command.Message.CHOOSE_STATION;
 import static com.itc.maslenitsabot.common.Command.Message.CONGRATULATION_TEXT;
@@ -49,13 +47,6 @@ public enum Command implements Descriable {
 
     public boolean isCommand(String actualText) {
         return this.getKey().equals(actualText) || this.getDescription().equals(actualText);
-    }
-
-    public static Command recognizeCommand(String message) {
-        return Stream.of(Command.values())
-                .filter(command -> command.isCommand(message))
-                .findAny()
-                .orElse(null);
     }
 
     public BotCommand toBotCommand() {
@@ -105,10 +96,6 @@ public enum Command implements Descriable {
                 
                 Попробуйте снова ответить на вопрос✨
                 """;
-
-        public static String getDontUnderstandMessage() {
-            return DONT_UNDERSTAND;
-        }
 
     }
 
